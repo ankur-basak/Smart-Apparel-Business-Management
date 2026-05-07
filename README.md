@@ -90,7 +90,7 @@ automate and streamline the daily operations of an apparel business.
 ## ⚙️ How to Run
 
 1. Clone the repository
-   git clone https://github.com/ankur-basak/Smart-Apparel-Business-Management-System.git
+   [git clone https://github.com/ankur-basak/Smart-Apparel-Business-Management-System.git](https://github.com/ankur-basak/Smart-Apparel-Business-Management-System)
 
 2. Open the solution in Visual Studio
 
