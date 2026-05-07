@@ -20,7 +20,7 @@ namespace Smart_Apparel_Business_Management
         private string email;
         private string gender;
         private string phone;
-        private string dateOfBirth;
+        private DateTime dateOfBirth;
         private string department;
         private string address;
         public Registration()
@@ -36,7 +36,7 @@ namespace Smart_Apparel_Business_Management
             department = cbdept.Text;
             email = txtemail.Text;
             phone = txtphone.Text;
-            dateOfBirth = txtdob.Text;
+            dateOfBirth = Convert.ToDateTime(txtdob.Text);
             address = txtaddress.Text;
 
             if (rbmale.Checked)
@@ -47,7 +47,8 @@ namespace Smart_Apparel_Business_Management
             {
                 gender = "Female";
             }
-            else{ 
+            else
+            {
                 gender = " ";
             }
 
@@ -60,31 +61,31 @@ namespace Smart_Apparel_Business_Management
             {
                 lblerrorpass.Text = "Please Enter Password";
             }
-            if(cbdept.Text =="")
+            if (cbdept.Text == "")
             {
                 lblerrordept.Text = "Please enter your department";
             }
-            if(txtuname.Text == "")
+            if (txtuname.Text == "")
             {
                 lblerroruname.Text = "Please enter username";
             }
-            if(txtemail.Text == "")
+            if (txtemail.Text == "")
             {
                 lblerroremail.Text = "Please enter email";
             }
-            if(txtphone.Text == "")
+            if (txtphone.Text == "")
             {
                 lblerrorphone.Text = "Please enter phone number";
             }
-            if(txtdob.Text == "")
+            if (txtdob.Text == "")
             {
                 lblerrordob.Text = "Please enter date of birth";
             }
-            if(rbmale.Checked == false && rbfemale.Checked == false && rbother.Checked == false)
+            if (rbmale.Checked == false && rbfemale.Checked == false && rbother.Checked == false)
             {
                 lblerrorgender.Text = "Please select gender";
             }
-            if(txtaddress.Text == "")
+            if (txtaddress.Text == "")
             {
                 lblerroraddress.Text = "Please enter address";
                 if (txtname.Text != "" && txtpass.Text != "" && cbdept.Text != "" && txtuname.Text != "" && txtemail.Text != "" && txtphone.Text != "" && txtaddress.Text != "" && txtdob.Text != "" && gender != " ")
@@ -93,22 +94,25 @@ namespace Smart_Apparel_Business_Management
                 }
             }
 
-            if (txtname.Text == name && txtpass.Text == password && cbdept.Text == department && txtuname.Text == username && txtemail.Text == email && txtphone.Text == phone && gender != " " && txtaddress.Text == address && txtdob.Text == dateOfBirth)
+            if (txtname.Text == name && txtpass.Text == password && cbdept.Text == department && txtuname.Text == username && txtemail.Text == email && txtphone.Text == phone && gender != " " && txtaddress.Text == address && Convert.ToDateTime(txtdob.Text) == dateOfBirth)
             {
-                MessageBox.Show("Succesfully Registered");
-                MessageBox.Show("Name: " + name + "\nUsername: " + username + "\nPassword: " + password + "\nEmail: " + email + "\nPhone: " + phone + "\nDate of Birth: " + dateOfBirth + "\nGender: " + gender + "\nDepartment: " + department + "\nAddress: " + address); 
+                SqlConnection con = new SqlConnection(@"Data Source=ankur\sqlexpress;Initial Catalog=ApparelDB;Integrated Security=True;");
+                con.Open();
+                string query = "INSERT INTO UsersTB(Name, Username, Password,Department, Email, Phone, DateOfBirth, Address, Gender) Values('" + name + "', '" + username + "', '" + password + "', '" + department + "', '" + email + "', '" + phone + "', '" + dateOfBirth + "', '" + address + "','" + gender + "')";
+                SqlCommand cmd = new SqlCommand(query, con);
+                cmd.ExecuteNonQuery();
+                con.Close();
+                MessageBox.Show("Successfully Registered");
+
+                Login log = new Login();
+                log.Show();
+                this.Hide();
             }
             else
             {
                 MessageBox.Show("Invalid Information");
             }
 
-            SqlConnection con = new SqlConnection(@"Data Source=ANKUR\SQLEXPRESS;Initial Catalog=LOGIN_DB;Integrated Security=True;Encrypt=True;TrustServerCertificate=True;");
-            con.Open();
-            string query = "INSERT INTO REGISTRATION_TB"+"(Name, Username, Password, Email, Phone, DateOfBirth, Gender, Department, Address)"+ "Values" +"('" + name + "', '" + username + "', '" + password + "', '" + email + "', '" + phone + "', '" + dateOfBirth + "', '" + gender + "', '" + department + "', '" + address + "')";
-            SqlCommand cmd = new SqlCommand(query, con);
-            cmd.ExecuteNonQuery();
-            con.Close();
         }
 
         private void Registration_Load(object sender, EventArgs e)
