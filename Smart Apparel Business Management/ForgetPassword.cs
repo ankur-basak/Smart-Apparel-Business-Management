@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+using System.Data.SqlClient;
 using System.Drawing;
 using System.Linq;
 using System.Text;
@@ -47,39 +48,47 @@ namespace Smart_Apparel_Business_Management
                 lblferrorCpass.Text = "Please confirm your password";
             }
 
-            if(txtforgetuname.Text!="" && txtforgetemail.Text!="" && txtforgetnewpass.Text!="" && txtforgetconfirmpass.Text!="")
+            if (txtforgetuname.Text != "" && txtforgetemail.Text != "" && txtforgetnewpass.Text != "" && txtforgetconfirmpass.Text != "")
             {
-               if (txtforgetnewpass.Text == txtforgetconfirmpass.Text)
-               {
-                  MessageBox.Show("Password reset successfully");
-                  MessageBox.Show("User: " + Username + "\nEmail: " + Email + "\nNew Password: " + NewPassword + "\nConfirmed Password: " + ConfirmPassword);
-               }
+                if (txtforgetnewpass.Text == txtforgetconfirmpass.Text)
+                {
+                    SqlConnection con = new SqlConnection(@"Data Source=ankur\sqlexpress;Initial Catalog=ApparelDB;Integrated Security=True;");
+                    con.Open();
+                    string query = "UPDATE UsersTB SET Password = '" + NewPassword + "' WHERE Username = '" + Username + "' AND Email = '" + Email + "'";
+                    SqlCommand cmd = new SqlCommand(query, con);
+                    int result = cmd.ExecuteNonQuery();
+                    con.Close();
+
+                    if (result > 0)
+                    {
+                        MessageBox.Show("Password Successfully Reset");
+                        Login log = new Login();
+                        log.Show();
+                        this.Hide();
+                    }
+                    else
+                    {
+                        MessageBox.Show("Username or Email Wrong");
+                    } 
+                }
                 else
                 {
-                  MessageBox.Show("Password reset failed.Passwords do not match.");
+                    MessageBox.Show("Password reset failed.Passwords do not match.");
                 }
             }
             else
             {
-              MessageBox.Show("Password reset failed. Please check your information and try again.");
+                MessageBox.Show("Password reset failed. Please check your information and try again.");
             }
-            
+
         }
-        
         private void Btnforgetback_Click(object sender, EventArgs e)
         {
             Login log = new Login();
             log.Show();
             this.Hide();
         }
-
-        private void lblcurrentpass_Click(object sender, EventArgs e)
-        {
-
-        }
-        private void txtforgetcurrentpass_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-    }
+        private void lblcurrentpass_Click(object sender, EventArgs e){}
+        private void txtforgetcurrentpass_TextChanged(object sender, EventArgs e){}
+    } 
 }

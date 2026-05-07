@@ -97,21 +97,21 @@
             // 
             this.txtforgetuname.Location = new System.Drawing.Point(181, 83);
             this.txtforgetuname.Name = "txtforgetuname";
-            this.txtforgetuname.Size = new System.Drawing.Size(100, 26);
+            this.txtforgetuname.Size = new System.Drawing.Size(100, 22);
             this.txtforgetuname.TabIndex = 6;
             // 
             // txtforgetemail
             // 
             this.txtforgetemail.Location = new System.Drawing.Point(181, 118);
             this.txtforgetemail.Name = "txtforgetemail";
-            this.txtforgetemail.Size = new System.Drawing.Size(140, 26);
+            this.txtforgetemail.Size = new System.Drawing.Size(140, 22);
             this.txtforgetemail.TabIndex = 7;
             // 
             // txtforgetnewpass
             // 
             this.txtforgetnewpass.Location = new System.Drawing.Point(181, 156);
             this.txtforgetnewpass.Name = "txtforgetnewpass";
-            this.txtforgetnewpass.Size = new System.Drawing.Size(130, 26);
+            this.txtforgetnewpass.Size = new System.Drawing.Size(130, 22);
             this.txtforgetnewpass.TabIndex = 9;
             // 
             // txtforgetconfirmpass
@@ -119,7 +119,7 @@
             this.txtforgetconfirmpass.Location = new System.Drawing.Point(181, 193);
             this.txtforgetconfirmpass.Name = "txtforgetconfirmpass";
             this.txtforgetconfirmpass.PasswordChar = '*';
-            this.txtforgetconfirmpass.Size = new System.Drawing.Size(130, 26);
+            this.txtforgetconfirmpass.Size = new System.Drawing.Size(130, 22);
             this.txtforgetconfirmpass.TabIndex = 8;
             this.txtforgetconfirmpass.TextChanged += new System.EventHandler(this.txtforgetcurrentpass_TextChanged);
             // 
@@ -140,7 +140,7 @@
             this.lblferroruname.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.lblferroruname.Location = new System.Drawing.Point(287, 83);
             this.lblferroruname.Name = "lblferroruname";
-            this.lblferroruname.Size = new System.Drawing.Size(0, 20);
+            this.lblferroruname.Size = new System.Drawing.Size(0, 16);
             this.lblferroruname.TabIndex = 10;
             // 
             // lblferroremail
@@ -150,7 +150,7 @@
             this.lblferroremail.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.lblferroremail.Location = new System.Drawing.Point(327, 118);
             this.lblferroremail.Name = "lblferroremail";
-            this.lblferroremail.Size = new System.Drawing.Size(0, 20);
+            this.lblferroremail.Size = new System.Drawing.Size(0, 16);
             this.lblferroremail.TabIndex = 11;
             // 
             // lblferrorNpass
@@ -160,7 +160,7 @@
             this.lblferrorNpass.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.lblferrorNpass.Location = new System.Drawing.Point(317, 156);
             this.lblferrorNpass.Name = "lblferrorNpass";
-            this.lblferrorNpass.Size = new System.Drawing.Size(0, 20);
+            this.lblferrorNpass.Size = new System.Drawing.Size(0, 16);
             this.lblferrorNpass.TabIndex = 12;
             // 
             // lblferrorCpass
@@ -170,7 +170,7 @@
             this.lblferrorCpass.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.lblferrorCpass.Location = new System.Drawing.Point(317, 193);
             this.lblferrorCpass.Name = "lblferrorCpass";
-            this.lblferrorCpass.Size = new System.Drawing.Size(0, 20);
+            this.lblferrorCpass.Size = new System.Drawing.Size(0, 16);
             this.lblferrorCpass.TabIndex = 13;
             // 
             // ForgetPassword
