@@ -2,20 +2,21 @@
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+using System.Data.SqlClient;
 using System.Drawing;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using System.Data.SqlClient;
 using static System.Windows.Forms.VisualStyles.VisualStyleElement;
+using static System.Windows.Forms.VisualStyles.VisualStyleElement.StartPanel;
 
 namespace Smart_Apparel_Business_Management
 {
     public partial class Login : Form
     {
-        private string uname = "Ankur Basak";
-        private string pass = "12345";
+        private string username;
+        private string password;
         public Login()
         {
             InitializeComponent();
@@ -29,6 +30,10 @@ namespace Smart_Apparel_Business_Management
         private void btulogin_Click(object sender, EventArgs e)
         {
             lblerrorupass.Text = lblerrormsguname.Text = "";
+
+            username = txtuname.Text;
+            password = txtupass.Text;
+
             if (txtuname.Text == "")
             {
                 lblerrormsguname.Text = "Please enter username";
@@ -42,24 +47,32 @@ namespace Smart_Apparel_Business_Management
 
                 }
             }
-            if (txtuname.Text == uname && txtupass.Text == pass)
+            if (txtuname.Text == username && txtupass.Text == password)
             {
-                MessageBox.Show("Succesfully logged in");
-                DashBoard dashBoard = new DashBoard(txtuname.Text);
-                dashBoard.Show();
-                this.Hide();
+                SqlConnection con = new SqlConnection(@"Data Source=ankur\sqlexpress;Initial Catalog=ApparelDB;Integrated Security=True;");
+                con.Open();
+                string query = "SELECT * FROM UsersTB WHERE Username='" + username + "' AND Password='" + password + "'";
+                SqlCommand cmd = new SqlCommand(query, con);
+                SqlDataReader reader = cmd.ExecuteReader();
+
+                if (reader.Read())
+                {
+                    MessageBox.Show("Succesfully logged in");
+                    DashBoard dashBoard = new DashBoard(txtuname.Text);
+                    dashBoard.Show();
+                    this.Hide();
+                }
+                else
+                {
+                    MessageBox.Show("Invalid username or password");
+                }
+                con.Close();
+
             }
             else
             {
-                MessageBox.Show("Invalid username or password");
+                MessageBox.Show("Please fill all fields");
             }
-            SqlConnection con = new SqlConnection();
-            con.ConnectionString = @"Data Source=ANKUR\\SQLEXPRESS;Initial Catalog=LOGIN_DB;Integrated Security=True";
-            /*con.Open();
-            string query = "Insert into login_table(Username, password) values('Ankur', '12345')";
-            SqlCommand cmd = new SqlCommand(query, con);
-            cmd.ExecuteNonQuery();
-            con.Close();*/
         }
 
         private void btusignup_Click(object sender, EventArgs e)
