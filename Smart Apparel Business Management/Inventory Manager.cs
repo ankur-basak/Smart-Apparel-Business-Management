@@ -8,14 +8,15 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace clothingstore
+namespace Smart_Apparel_Business_Management
 {
     
     public partial class Inventory_Manager : Form
     {
         public int idManager = 1;
-        public Inventory_Manager()
-        {    
+        public Inventory_Manager(int id)
+        {
+            this.idManager = id;  
             InitializeComponent();
         }
 
@@ -76,6 +77,14 @@ namespace clothingstore
             this.Visible = false;
             EditProfile ep = new EditProfile(this, idManager);
             ep.Visible = true;
+        }
+
+        private void btnlogout_Click(object sender, EventArgs e)
+        {
+            this.Visible = false;
+            Login log = new Login();
+            log.Visible= true;
+
         }
     }
 }

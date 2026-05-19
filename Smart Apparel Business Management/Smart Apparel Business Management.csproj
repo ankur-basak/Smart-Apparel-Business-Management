@@ -33,6 +33,12 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="BouncyCastle.Cryptography, Version=2.0.0.0, Culture=neutral, PublicKeyToken=072edcf4a5328938, processorArchitecture=MSIL">
+      <HintPath>..\packages\BouncyCastle.Cryptography.2.6.2\lib\net461\BouncyCastle.Cryptography.dll</HintPath>
+    </Reference>
+    <Reference Include="itextsharp, Version=5.5.13.5, Culture=neutral, PublicKeyToken=8354ae6d2174ddca, processorArchitecture=MSIL">
+      <HintPath>..\packages\iTextSharp.5.5.13.5\lib\net461\itextsharp.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Configuration" />
     <Reference Include="System.Core" />
@@ -53,6 +59,13 @@
     <Compile Include="DashBoard.Designer.cs">
       <DependentUpon>DashBoard.cs</DependentUpon>
     </Compile>
+    <Compile Include="DataAccess.cs" />
+    <Compile Include="EditProfile.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="EditProfile.Designer.cs">
+      <DependentUpon>EditProfile.cs</DependentUpon>
+    </Compile>
     <Compile Include="ForgetPassword.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -70,6 +83,18 @@
     </Compile>
     <Compile Include="ChangePassword.Designer.cs">
       <DependentUpon>ChangePassword.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Inventory Manager.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Inventory Manager.Designer.cs">
+      <DependentUpon>Inventory Manager.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Inventory operation.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Inventory operation.Designer.cs">
+      <DependentUpon>Inventory operation.cs</DependentUpon>
     </Compile>
     <Compile Include="Settings.cs">
       <SubType>Form</SubType>
@@ -97,6 +122,18 @@
     <Compile Include="Registration.Designer.cs">
       <DependentUpon>Registration.cs</DependentUpon>
     </Compile>
+    <Compile Include="View Inventory reports.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View Inventory reports.Designer.cs">
+      <DependentUpon>View Inventory reports.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View Products.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View Products.Designer.cs">
+      <DependentUpon>View Products.cs</DependentUpon>
+    </Compile>
     <EmbeddedResource Include="AdminOperation.resx">
       <DependentUpon>AdminOperation.cs</DependentUpon>
     </EmbeddedResource>
@@ -106,8 +143,17 @@
     <EmbeddedResource Include="DashBoard.resx">
       <DependentUpon>DashBoard.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="EditProfile.resx">
+      <DependentUpon>EditProfile.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="ForgetPassword.resx">
       <DependentUpon>ForgetPassword.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Inventory Manager.resx">
+      <DependentUpon>Inventory Manager.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Inventory operation.resx">
+      <DependentUpon>Inventory operation.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Settings.resx">
       <DependentUpon>Settings.cs</DependentUpon>
@@ -131,6 +177,13 @@
     <EmbeddedResource Include="Registration.resx">
       <DependentUpon>Registration.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="View Inventory reports.resx">
+      <DependentUpon>View Inventory reports.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View Products.resx">
+      <DependentUpon>View Products.cs</DependentUpon>
+    </EmbeddedResource>
+    <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>

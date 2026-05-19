@@ -6,7 +6,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Diagnostic
+namespace Smart_Apparel_Business_Management
 {
     public class DataAccess
     {

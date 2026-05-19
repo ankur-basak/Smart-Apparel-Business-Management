@@ -1,4 +1,4 @@
-﻿namespace clothingstore
+﻿namespace Smart_Apparel_Business_Management
 {
     partial class View_Inventory_reports
     {

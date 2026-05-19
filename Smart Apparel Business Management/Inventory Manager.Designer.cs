@@ -1,4 +1,4 @@
-﻿namespace clothingstore
+﻿namespace Smart_Apparel_Business_Management
 {
     partial class Inventory_Manager
     {
@@ -68,6 +68,7 @@
             this.btnlogout.TabIndex = 9;
             this.btnlogout.Text = "Log Out";
             this.btnlogout.UseVisualStyleBackColor = false;
+            this.btnlogout.Click += new System.EventHandler(this.btnlogout_Click);
             // 
             // btninop
             // 

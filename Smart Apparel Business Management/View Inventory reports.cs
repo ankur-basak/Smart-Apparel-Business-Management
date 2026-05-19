@@ -1,5 +1,4 @@
-﻿using Diagnostic;
-using iTextSharp.text;
+﻿using iTextSharp.text;
 using iTextSharp.text.pdf;
 using System;
 using System.Collections.Generic;
@@ -12,7 +11,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace clothingstore
+namespace Smart_Apparel_Business_Management
 {
     public partial class View_Inventory_reports : Form
     {
@@ -93,13 +92,13 @@ namespace clothingstore
 
                 PdfPTable table = new PdfPTable(gvir.Columns.Count);
 
-                // Add Column Headers
+               
                 for (int i = 0; i < gvir.Columns.Count; i++)
                 {
                     table.AddCell(gvir.Columns[i].HeaderText);
                 }
 
-                // Add Row Data
+           
                 for (int i = 0; i < gvir.Rows.Count; i++)
                 {
                     for (int j = 0; j < gvir.Columns.Count; j++)

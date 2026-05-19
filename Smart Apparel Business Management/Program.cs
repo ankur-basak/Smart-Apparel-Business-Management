@@ -17,6 +17,8 @@ namespace Smart_Apparel_Business_Management
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
             Application.Run(new Login());
+
+
         }
     }
 }
