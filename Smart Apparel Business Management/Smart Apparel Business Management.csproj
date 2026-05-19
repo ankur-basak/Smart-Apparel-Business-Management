@@ -88,6 +88,22 @@
     <Compile Include="ChangePassword.Designer.cs">
       <DependentUpon>ChangePassword.cs</DependentUpon>
     </Compile>
+    <Compile Include="HRSettings.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="HRSettings.Designer.cs" />
+    <Compile Include="HR_Department.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="HR_Department.Designer.cs" />
+    <Compile Include="HR_Operation.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="HR_Operation.Designer.cs" />
+    <Compile Include="HR_WorkforceManagement.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="HR_WorkforceManagement.Designer.cs" />
     <Compile Include="Inventory Manager.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -175,6 +191,10 @@
     <EmbeddedResource Include="ForgetPassword.resx">
       <DependentUpon>ForgetPassword.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="HRSettings.resx" />
+    <EmbeddedResource Include="HR_Department.resx" />
+    <EmbeddedResource Include="HR_Operation.resx" />
+    <EmbeddedResource Include="HR_WorkforceManagement.resx" />
     <EmbeddedResource Include="Inventory Manager.resx">
       <DependentUpon>Inventory Manager.cs</DependentUpon>
     </EmbeddedResource>

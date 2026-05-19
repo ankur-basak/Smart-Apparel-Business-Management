@@ -17,7 +17,9 @@ namespace Smart_Apparel_Business_Management
         public Inventory_Manager(int id)
         {
             this.idManager = id;  
+           
             InitializeComponent();
+            loadname();
         }
 
         private void label2_Click(object sender, EventArgs e)
@@ -84,6 +86,39 @@ namespace Smart_Apparel_Business_Management
             this.Visible = false;
             Login log = new Login();
             log.Visible= true;
+
+        }
+
+        private void Inventory_Manager_Load(object sender, EventArgs e)
+        {
+
+        }
+      public void  loadname() {
+
+            try
+            {
+                DataAccess da = new DataAccess();
+
+                string query =
+                    "SELECT name FROM Users WHERE userId = " + this.idManager;
+
+                DataTable dt = da.ExecuteQueryTable(query);
+
+                if (dt.Rows.Count > 0)
+                {
+                    label2.Text = dt.Rows[0]["name"].ToString();
+                }
+                else
+                {
+                    label2.Text = "User Not Found";
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+
+
 
         }
     }

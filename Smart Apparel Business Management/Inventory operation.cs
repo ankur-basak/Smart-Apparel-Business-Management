@@ -58,12 +58,12 @@ namespace Smart_Apparel_Business_Management
 
         private void btnap_Click(object sender, EventArgs e)
         {
-
             try
             {
                 DataAccess da = new DataAccess();
 
                 string category = "";
+
                 if (txtpname.Text == "")
                 {
                     MessageBox.Show("Please Enter Product Name");
@@ -114,6 +114,7 @@ namespace Smart_Apparel_Business_Management
                     return;
                 }
 
+             
                 if (rbt.Checked)
                 {
                     category = "T-Shirt";
@@ -131,6 +132,7 @@ namespace Smart_Apparel_Business_Management
                     category = "Casual Pant";
                 }
 
+           
                 string brand = "";
 
                 if (cbdn.Checked)
@@ -147,21 +149,51 @@ namespace Smart_Apparel_Business_Management
                 }
 
                 string productName = txtpname.Text;
-
                 string size = cmbsize.Text;
-
                 string color = comboBox1.Text;
 
-                 quantity = Convert.ToInt32(txtqnt.Text);
+                int newId;
 
-
-                
+               
                 string idQuery = "SELECT ISNULL(MAX(productId),100) + 1 FROM ProductInventory";
 
                 DataTable dt = da.ExecuteQueryTable(idQuery);
 
-                int newId = Convert.ToInt32(dt.Rows[0][0]);
+                newId = Convert.ToInt32(dt.Rows[0][0]);
 
+                if (txtpid.Text != "")
+                {
+                    newId = Convert.ToInt32(txtpid.Text);
+
+                    string checkQuery =
+                        "SELECT * FROM ProductInventory WHERE productId = " + newId;
+
+                    DataTable checkTable = da.ExecuteQueryTable(checkQuery);
+
+                    if (checkTable.Rows.Count > 0)
+                    {
+                        //string updateQuery =
+                        //    "UPDATE ProductInventory SET " +
+                        //    "productName = '" + productName + "', " +
+                        //    "category = '" + category + "', " +
+                        //    "brand = '" + brand + "', " +
+                        //    "size = '" + size + "', " +
+                        //    "color = '" + color + "', " +
+                        //    "totalStock = " + quantity + ", " +
+                        //    "availableStock = " + quantity + ", " +
+                        //    "lastUpdated = GETDATE() " +
+                        //    "WHERE productId = " + newId;
+
+                        //int updateCount = da.ExecuteDMLQuery(updateQuery);
+
+                            MessageBox.Show("Product Already exist ,so you can update it");
+
+                            LoadData();
+                       
+
+                        return;
+                    }
+                }
 
                
                 string query =

@@ -33,8 +33,6 @@
             this.btnback = new System.Windows.Forms.Button();
             this.btnshow = new System.Windows.Forms.Button();
             this.textBox1 = new System.Windows.Forms.TextBox();
-            this.label1 = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.gvp)).BeginInit();
             this.SuspendLayout();
             // 
@@ -91,34 +89,12 @@
             this.textBox1.Size = new System.Drawing.Size(253, 40);
             this.textBox1.TabIndex = 4;
             // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(26, 45);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(228, 29);
-            this.label1.TabIndex = 5;
-            this.label1.Text = "All Product Details";
-            // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(1127, 54);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(90, 20);
-            this.label2.TabIndex = 6;
-            this.label2.Text = "(by Name)";
-            // 
             // View_Products
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ActiveCaption;
             this.ClientSize = new System.Drawing.Size(1241, 635);
-            this.Controls.Add(this.label2);
-            this.Controls.Add(this.label1);
             this.Controls.Add(this.textBox1);
             this.Controls.Add(this.btnshow);
             this.Controls.Add(this.btnback);
@@ -139,7 +115,5 @@
         private System.Windows.Forms.Button btnback;
         private System.Windows.Forms.Button btnshow;
         private System.Windows.Forms.TextBox textBox1;
-        private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Label label2;
     }
 }

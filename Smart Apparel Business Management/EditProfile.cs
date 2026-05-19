@@ -68,7 +68,7 @@ namespace Smart_Apparel_Business_Management
         {
            
             try
-            {
+            { 
                 DataAccess da = new DataAccess();
 
                 string name = maskedTextBox1.Text;
@@ -112,6 +112,7 @@ namespace Smart_Apparel_Business_Management
                 {
                     MessageBox.Show("Update Failed");
                 }
+                loadname();
             }
             catch (Exception ex)
             {
@@ -119,10 +120,40 @@ namespace Smart_Apparel_Business_Management
             }
         
     }
+        private void loadname()
+        {
+
+            try
+            {
+                DataAccess da = new DataAccess();
+
+                string query =
+                    "SELECT name FROM Users WHERE userId = " + this.idManager;
+
+                DataTable dt = da.ExecuteQueryTable(query);
+
+                if (dt.Rows.Count > 0)
+                {
+                    label2.Text = dt.Rows[0]["name"].ToString();
+                }
+                else
+                {
+                    label2.Text = "User Not Found";
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+
+
+
+        }
 
         private void button1_Click(object sender, EventArgs e)
         {
             this.Visible= false;
+            im.loadname();
             this.im.Visible = true;
         }
     }
