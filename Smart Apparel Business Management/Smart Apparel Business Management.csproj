@@ -53,6 +53,10 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="AddCustomer.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AddCustomer.Designer.cs" />
     <Compile Include="DashBoard.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -96,6 +100,19 @@
     <Compile Include="Inventory operation.Designer.cs">
       <DependentUpon>Inventory operation.cs</DependentUpon>
     </Compile>
+    <Compile Include="OrderOperations.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="OrderOperations.Designer.cs" />
+    <Compile Include="PriintInvoice.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PriintInvoice.Designer.cs" />
+    <Compile Include="SalesDataStore.cs" />
+    <Compile Include="SalesExceutive.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="SalesExceutive.Designer.cs" />
     <Compile Include="Settings.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -134,6 +151,15 @@
     <Compile Include="View Products.Designer.cs">
       <DependentUpon>View Products.cs</DependentUpon>
     </Compile>
+    <Compile Include="ViewDashboard.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ViewDashboard.Designer.cs" />
+    <Compile Include="ViewProduct.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ViewProduct.Designer.cs" />
+    <EmbeddedResource Include="AddCustomer.resx" />
     <EmbeddedResource Include="AdminOperation.resx">
       <DependentUpon>AdminOperation.cs</DependentUpon>
     </EmbeddedResource>
@@ -155,6 +181,9 @@
     <EmbeddedResource Include="Inventory operation.resx">
       <DependentUpon>Inventory operation.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="OrderOperations.resx" />
+    <EmbeddedResource Include="PriintInvoice.resx" />
+    <EmbeddedResource Include="SalesExceutive.resx" />
     <EmbeddedResource Include="Settings.resx">
       <DependentUpon>Settings.cs</DependentUpon>
     </EmbeddedResource>
@@ -183,6 +212,8 @@
     <EmbeddedResource Include="View Products.resx">
       <DependentUpon>View Products.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="ViewDashboard.resx" />
+    <EmbeddedResource Include="ViewProduct.resx" />
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>

@@ -17,7 +17,7 @@ namespace Smart_Apparel_Business_Management
         {
             InitializeComponent();
         }
-        SqlConnection con = new SqlConnection(@"Data Source=ANKUR\SQLEXPRESS;Initial Catalog=ApparelDB;Integrated Security=True");
+        SqlConnection con = new SqlConnection(@"Data Source=DESKTOP-2OGA0PO\SQLEXPRESS;Initial Catalog=Smart_Apparel_Business_Management;Integrated Security=True");
         private void btnchangeSubmit_Click(object sender, EventArgs e)
         {
             if (txtChangeuname.Text == "" || txtCCurrentPassword.Text == "" || txtChangenewpass.Text == "")
@@ -26,7 +26,7 @@ namespace Smart_Apparel_Business_Management
                 return;
             }
 
-            string query = "UPDATE UsersTB SET Password = '" + txtChangenewpass.Text +
+            string query = "UPDATE Users SET Password = '" + txtChangenewpass.Text +
                            "' WHERE Username = '" + txtChangeuname.Text +
                            "' AND Password = '" + txtCCurrentPassword.Text + "'";
 
