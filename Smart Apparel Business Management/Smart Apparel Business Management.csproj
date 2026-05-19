@@ -59,7 +59,6 @@
     <Compile Include="ForgetPassword.Designer.cs">
       <DependentUpon>ForgetPassword.cs</DependentUpon>
     </Compile>
-<<<<<<< HEAD
     <Compile Include="AdminOperation.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -84,8 +83,6 @@
     <Compile Include="Reports.Designer.cs">
       <DependentUpon>Reports.cs</DependentUpon>
     </Compile>
-=======
->>>>>>> 8dca9ca62f222c2105c3fd276f8cd615a5ae9b1a
     <Compile Include="Login.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -100,30 +97,24 @@
     <Compile Include="Registration.Designer.cs">
       <DependentUpon>Registration.cs</DependentUpon>
     </Compile>
-<<<<<<< HEAD
     <EmbeddedResource Include="AdminOperation.resx">
       <DependentUpon>AdminOperation.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="ChangePassword.resx">
       <DependentUpon>ChangePassword.cs</DependentUpon>
     </EmbeddedResource>
-=======
->>>>>>> 8dca9ca62f222c2105c3fd276f8cd615a5ae9b1a
     <EmbeddedResource Include="DashBoard.resx">
       <DependentUpon>DashBoard.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="ForgetPassword.resx">
       <DependentUpon>ForgetPassword.cs</DependentUpon>
     </EmbeddedResource>
-<<<<<<< HEAD
     <EmbeddedResource Include="Settings.resx">
       <DependentUpon>Settings.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Reports.resx">
       <DependentUpon>Reports.cs</DependentUpon>
     </EmbeddedResource>
-=======
->>>>>>> 8dca9ca62f222c2105c3fd276f8cd615a5ae9b1a
     <EmbeddedResource Include="Login.resx">
       <DependentUpon>Login.cs</DependentUpon>
     </EmbeddedResource>
